@@ -117,3 +117,53 @@ console.log(removeDuplicatesOptimized([0, 0, 0, 1, 1, 2, 3, 4, 4, 4, 5]));
 
 //time complexity = o(n)
 //space complexity = o(1)
+
+//Q.4 -- Given an integer array nums, find the subarray with the largest sum, and return its sum
+
+//brute force approach
+function maxSubArray(nums) {
+  let maxsum = nums[0];
+
+  let startIndex = 0;
+  let endIndex = 0;
+
+  for (let i = 0; i < nums.length; i++) {
+    let currentSum = 0;
+    for (let j = i; j < nums.length; j++) {
+      currentSum = currentSum + nums[j];
+      if (currentSum > maxsum) {
+        maxsum = currentSum;
+        startIndex = i;
+        endIndex = j;
+      }
+    }
+  }
+
+  return {
+    sum: maxsum,
+    subArray: nums.slice(startIndex, endIndex + 1),
+  };
+}
+
+console.log(maxSubArray([-2, 1, -3, 4, -1, 2, 1, -5, 4]));
+
+//optimized approach
+function maxSubArrayOptimized(nums) {
+  let sum = 0;
+  let maxSum = nums[0];
+
+  for (let i = 0; i < nums.length; i++) {
+    sum += nums[i];
+
+    if (sum > maxSum) {
+      maxSum = sum;
+    }
+    if (sum < 0) {
+      sum = 0;
+    }
+  }
+
+  return maxSum;
+}
+
+console.log(maxSubArrayOptimized([-2, 1, -3, 4, -1, 2, 1, -5, 4]));
