@@ -166,4 +166,4 @@ function maxSubArrayOptimized(nums) {
   return maxSum;
 }
 
-console.log(maxSubArrayOptimized([-2, 1, -3, 4, -1, 2, 1, -5, 4]));
+console.log(maxSubArrayOptimized([5, 2, 8, -1]));
