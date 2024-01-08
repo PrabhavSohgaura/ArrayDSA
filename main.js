@@ -167,3 +167,21 @@ function maxSubArrayOptimized(nums) {
 }
 
 console.log(maxSubArrayOptimized([5, 2, 8, -1]));
+
+//Q.5 -- Given a non-empty array of integers nums, every element appears twice except for one. Find that single one.
+// Input = [2,2,1] => output => [1] = 1 is appearing once only
+
+function singleNumber(nums) {
+  //assigning first element as a result initially
+  let result = nums[0];
+
+  //looping from second element
+  for (let i = 1; i < nums.length; i++) {
+    //bitwise operator compare the values in 32 bit and remove the same value
+    result = result ^ nums[i];
+  }
+
+  return result;
+}
+
+console.log(singleNumber([2, 2, 3, 3, 1]));
