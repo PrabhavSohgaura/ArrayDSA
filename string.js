@@ -36,7 +36,7 @@ const priceUS = "288.75$";
 const priceInd = priceUS.replace("$", "Rs");
 console.log(priceInd);
 
-//to replace both the door words we will use regular expressions
+//to replace both the door words we will use regex expressions
 const announcement =
   "All passengers please come to door 23.Boarding started at door 23!";
 console.log(announcement.replace(/door/g, "gate"));
