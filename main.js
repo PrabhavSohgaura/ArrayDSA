@@ -18,7 +18,7 @@ function secondLargest(arr) {
 
 console.log(secondLargest([1, 1, 2, 5, 15, 34, 35, 35]));
 
-//optimized approach
+//optimized approached
 function secondLargestOptimized(arr) {
   let largest = Number.NEGATIVE_INFINITY;
   let secondLargest = Number.NEGATIVE_INFINITY;
