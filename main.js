@@ -185,3 +185,22 @@ function singleNumber(nums) {
 }
 
 console.log(singleNumber([2, 2, 3, 3, 1]));
+
+//Q.6 - Find the duplicate elements in an array
+// brute force approach
+function duplicateElements(inputarr) {
+  let duplicate = [];
+  for (num in inputarr) {
+    for (num2 in inputarr) {
+      if (num === num2) {
+        continue;
+      } else {
+        if (inputarr[num] === inputarr[num2]) {
+          duplicate.push(inputarr[num]);
+        }
+      }
+    }
+  }
+  return [...new Set(duplicate)];
+}
+console.log(duplicateElements([4, 4, 5, 8, 8, 9]));
