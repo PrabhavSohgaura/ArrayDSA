@@ -191,7 +191,9 @@ console.log(singleNumber([2, 2, 3, 3, 1]));
 function duplicateElements(inputarr) {
   let duplicate = [];
   for (num in inputarr) {
+    console.log("num", num);
     for (num2 in inputarr) {
+      console.log("num2", num2);
       if (num === num2) {
         continue;
       } else {
@@ -204,3 +206,4 @@ function duplicateElements(inputarr) {
   return [...new Set(duplicate)];
 }
 console.log(duplicateElements([4, 4, 5, 8, 8, 9]));
+//4,8
